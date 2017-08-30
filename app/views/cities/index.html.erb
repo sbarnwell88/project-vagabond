@@ -1,7 +1,8 @@
 <h1>Cities:</h1>
 
+<ul>
 <% @cities.each do |city| %>
-    <%= link_to city.name, city_path(city) %>
+    <li><%= link_to city.name, city_path(city) %></li>
 <% end %>
-
+</ul>
 <div><%= link_to  "Add New City", new_city_path %></div>
