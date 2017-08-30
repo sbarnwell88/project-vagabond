@@ -6,5 +6,5 @@
 <%= link_to  "edit tip", edit_city_post_path %>
 
 <%= form_for [@post.city, @post], method: :delete do |f| %> 
- <%= f.submit "Delete", class: "delete" %>
+ <%= f.submit "Delete", class: "delete", data: {confirm: "Are you sure?"} %>
 <% end %>
