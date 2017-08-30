@@ -1,0 +1,10 @@
+<%= form_for [@city, @post] do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :tip %>
+    <%= f.text_area :tip %>
+
+    <%= f.submit %>
+
+<% end %>

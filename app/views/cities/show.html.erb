@@ -1,1 +1,9 @@
 <h1><%= @city.name %></h1>
+<div><%= image_tag @city.image %></div>
+<div><%= @city.description %></div>
+<div>
+  <ul>
+<% @city.posts.each do |post| %>
+    <li><%= link_to post.title, city_post_path(post) %></li>
+<% end %>
+</ul> </div>
