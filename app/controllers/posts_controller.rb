@@ -15,21 +15,33 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find params[:id]
   end
 
   def edit
+    @city = City.find params[:city_id]
+    @post = Post.find params[:id]
   end
 
   def update
+    @city = City.find params[:city_id] 
+    @post = @city.posts.find params[:id]
+    @post.update(post_params)
+    
+    redirect_to city_path(@city)
   end
 
   def destroy
+    @city = City.find params[:city_id]
+    @post = @city.posts.find params[:id]
+    @post.destroy
+
+    redirect_to city_path(@city)
   end
 
   private
   def post_params
-    params.require(:post).permit(:title, :tip)
+    params.require(:post).permit(:title, :tip, :post_id)
   end
 
 end

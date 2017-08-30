@@ -4,6 +4,8 @@
 <div>
   <ul>
 <% @city.posts.each do |post| %>
-    <li><%= link_to post.title, city_post_path(post) %></li>
+    <li><%= link_to post.title, city_post_path(@city.id, post.id) %></li>
 <% end %>
-</ul> </div>
+</ul> 
+
+ 

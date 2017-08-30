@@ -1,2 +1,10 @@
 <h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+
+<h3><%= @post.title %></h3>
+<p><%= @post.tip %></p>
+
+<%= link_to  "edit tip", edit_city_post_path %>
+
+<%= form_for [@post.city, @post], method: :delete do |f| %> 
+ <%= f.submit "Delete", class: "delete" %>
+<% end %>
