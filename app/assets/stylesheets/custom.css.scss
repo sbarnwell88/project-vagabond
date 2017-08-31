@@ -13,14 +13,25 @@
     background-color: #808080;
 }
 
+.jumbotron p {
+    font-size: 120px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 200px;
+    font-weight: 900px; 
+    
+}
+
+
 .jumbotron {
     position: relative;
-    background: #000 url("suitcase.png") center center;
+    background: #000 url("https://static.pexels.com/photos/196666/pexels-photo-196666.jpeg") center center;
     width: 100%;
     height: 100vh;
     background-size: cover;
     overflow: hidden;
     text-align: center;
+    font-size: 36px;
 }
 
 ///////////////////////////////////////
