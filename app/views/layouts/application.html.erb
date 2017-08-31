@@ -11,10 +11,17 @@
   <body>
     <% unless controller_name == "home" %>
       <div class="navbar">
-        <a href="/">WAYFARE</a>
+        <div><a href="/">WAYFARE</a></div>
+        <div><% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong>.
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %> |
+          <%= link_to "Login", new_user_session_path  %>
+        <% end %></div>
       </div
     <% end %>
-
+       <p class="notice"><%= notice %></p>
     <%= yield %>
     <% if flash.alert %>
       <div><%=flash.alert%></div>

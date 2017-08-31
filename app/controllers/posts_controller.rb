@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @post = Post.all
   end
@@ -9,11 +11,6 @@ class PostsController < ApplicationController
   end
   
   def create
-    # @city = City.find params[:city_id]
-    # @post = @city.posts.create!(post_params)
-
-    # redirect_to city_path(@city)
-
     @city = City.find params[:city_id]
     @post = @city.posts.new(post_params)
     if @post.valid?
@@ -53,7 +50,9 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :tip, :post_id)
+      post = params.require(:post).permit(:title, :tip, :post_id, :user_id)
+      user_id = {user_id: current_user.id}
+      post.merge(user_id)
   end
 
 end
