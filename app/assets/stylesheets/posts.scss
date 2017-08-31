@@ -1,3 +1,40 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.posts {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    p {
+    font-size: 15px;
+    padding: 10px;
+}
+}
+.new-tip {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+}
+.details {
+    text-align: center;
+    h3 {
+        font-weight: bold;
+        font-size: 30px;
+        padding: 10px;
+    }
+    p{
+        font-size: 25px;
+        padding: 10px;
+    }
+}
+.edit-button {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.delete-button {
+    display: flex;
+    justify-content: center;
+}
