@@ -2,8 +2,14 @@
 @import "bootstrap";
 @import "bootswatch/flatly/bootswatch";
 
+///////////////////////////////////////
+//           NAVBAR
+///////////////////////////////////////
+
 .navbar {
     padding: 30px;
+    margin: 0;
+    border-radius: 0;
     background-color: #808080;
 }
 
@@ -17,26 +23,49 @@
     text-align: center;
 }
 
-.container-index {
+///////////////////////////////////////
+//      BODY CONTAINERS
+///////////////////////////////////////
+
+.container-all-views {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin: 50px;
 }
 
-.container-show {
+///////////////////////////////////////
+//        CITY
+///////////////////////////////////////
+
+.container-city-index {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 50px;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-.container-form {
+.container-city-views {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 50px;
 }
+
+.city-details {
+    margin: 50px;
+
+}
+
+///////////////////////////////////////
+//        IMAGES
+///////////////////////////////////////
+ .img {
+     width: 100%;
+ }
+
+
+///////////////////////////////////////
+//        FORMS
+///////////////////////////////////////
 
 .form-group {
     background-color: #808080;
@@ -52,12 +81,19 @@
     resize: none;
 }
 
+///////////////////////////////////////
+//         BUTTONS
+///////////////////////////////////////
+
 .btn {
     height: 40px;
     width: 100px;
+    text-align: center;
 }
 
 .btn-lrg {
     height: 40px;
-    width: 200px;
+    width: 150px;
+    border-radius: 4px;
+    text-align: center;
 }
