@@ -9,10 +9,20 @@ class PostsController < ApplicationController
   end
   
   def create
-    @city = City.find params[:city_id]
-    @post = @city.posts.create!(post_params)
+    # @city = City.find params[:city_id]
+    # @post = @city.posts.create!(post_params)
 
-    redirect_to city_path(@city)
+    # redirect_to city_path(@city)
+
+    @city = City.find params[:city_id]
+    @post = @city.posts.new(post_params)
+    if @post.valid?
+      @post.save
+      redirect_to city_path(@city)
+    else 
+      flash.alert = "Your post must have a title between 1-200 characters & you must include a tip."
+      redirect_to new_city_post_path
+    end
 
   end
 
