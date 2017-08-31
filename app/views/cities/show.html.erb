@@ -6,14 +6,14 @@
     <div class="city-details">
     <h3><%= @city.description %></h3>
     <div>
-        <ul>
+      <div class="new-tip"><%= link_to  "Add New Tip", new_city_post_path(@city.id) %></div>
+    </div>
+    <div class="posts">
           <% @city.posts.order("created_at DESC").each do |post| %>
-            <li><%= link_to post.title, city_post_path(@city.id, post.id) %>
-            <%= post.created_at %></li>
+            <%= link_to post.title, city_post_path(@city.id, post.id) %>
+            <p><%= post.created_at %></p>
           <% end %>
-      </ul> 
-  </div>
-    <%= link_to  "Add New Tip", new_city_post_path(@city.id) %>
+    </div>
   </div>
   </div>
 </div>
