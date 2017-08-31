@@ -4,12 +4,14 @@
     <div><%= image_tag @city.image %></div>
     <h3><%= @city.description %></h3>
     <div>
-      <ul>
-        <% @city.posts.each do |post| %>
-          <li><%= link_to post.title, city_post_path(@city.id, post.id) %></li>
-        <% end %>
-    </ul> 
+        <ul>
+          <% @city.posts.order("created_at DESC").each do |post| %>
+            <li><%= link_to post.title, city_post_path(@city.id, post.id) %>
+            <%= post.created_at %></li>
+          <% end %>
+      </ul> 
   </div>
+    <%= link_to  "Add New Tip", new_city_post_path(@city.id) %>
 </div>
 
 
