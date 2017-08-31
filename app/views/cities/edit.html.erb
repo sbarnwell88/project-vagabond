@@ -1,6 +1,6 @@
 <div>
   <div class="container-form">
-    <h1>Create a New City</h1>
+    <h1>Edit City</h1>
 
     <div class="form-group">
     <%= form_for @city do |f| %>
@@ -8,12 +8,12 @@
       <%= f.text_field :name, class:"form-control" %> </br>
 
       <%= f.label :description %>
-      <%= f.text_area :description, class:"form-control" %></br>
+      <%= f.text_area :description, class:"form-control" %> </br>
 
       <%= f.label :image %>
-      <%= f.text_field :image, class:"form-control" %></br>
+      <%= f.text_field :image, class:"form-control" %> </br>
 
-      <%= f.submit class: "btn-lrg"%>
+      <%= f.submit class: "btn" %>
 
     <% end %>
     </div>

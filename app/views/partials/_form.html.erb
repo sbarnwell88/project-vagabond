@@ -1,10 +1,11 @@
-<%= form_for [@city, @post] do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<div class="form-group">
+    <%= form_for [@city, @post] do |f| %>  
+        <%= f.label :title %> <br/>
+        <%= f.text_field :title, class:"form-control" %> <br/>
 
-    <%= f.label :tip %>
-    <%= f.text_area :tip %>
+        <%= f.label :tip %> <br/>
+        <%= f.text_area :tip, class:"form-control" %> <br/>
 
-    <%= f.submit %>
-
-<% end %>
+        <%= f.submit class: "btn" %>
+    <% end %>
+</div>

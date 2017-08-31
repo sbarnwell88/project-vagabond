@@ -1,10 +1,14 @@
-<h1>Posts#show</h1>
+<div>
+    <div class="container-show"> 
+        <h3><%= @post.title %></h3>
+        <p><%= @post.tip %></p>
 
-<h3><%= @post.title %></h3>
-<p><%= @post.tip %></p>
+        <div>
+            <button class="btn"> <%= link_to  "edit tip", edit_city_post_path %> </button></br><br/>
 
-<%= link_to  "edit tip", edit_city_post_path %>
-
-<%= form_for [@post.city, @post], method: :delete do |f| %> 
- <%= f.submit "Delete", class: "delete", data: {confirm: "Are you sure?"} %>
-<% end %>
+            <%= form_for [@post.city, @post], method: :delete do |f| %> 
+            <%= f.submit "Delete", class: "delete btn", data: {confirm: "Are you sure?"} %>
+            <% end %>
+        </div>
+    </div>
+</div>

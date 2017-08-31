@@ -1,11 +1,16 @@
-<h1><%= @city.name %></h1>
-<div><%= image_tag @city.image %></div>
-<div><%= @city.description %></div>
 <div>
-  <ul>
-<% @city.posts.each do |post| %>
-    <li><%= link_to post.title, city_post_path(@city.id, post.id) %></li>
-<% end %>
-</ul> 
+  <div class="container-show">
+    <h1><%= @city.name %></h1>
+    <div><%= image_tag @city.image %></div>
+    <h3><%= @city.description %></h3>
+    <div>
+      <ul>
+        <% @city.posts.each do |post| %>
+          <li><%= link_to post.title, city_post_path(@city.id, post.id) %></li>
+        <% end %>
+    </ul> 
+  </div>
+</div>
+
 
  

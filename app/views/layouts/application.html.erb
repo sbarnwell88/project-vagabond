@@ -9,12 +9,13 @@
   </head>
 
   <body>
-    <div class="navbar">
-      <a href="/">WAYFARE</a>
-    </div>
-
-
+    <% unless controller_name == "home" %>
+      <div class="navbar">
+        <a href="/">WAYFARE</a>
+      </div
+    <% end %>
 
     <%= yield %>
+
   </body>
 </html>
