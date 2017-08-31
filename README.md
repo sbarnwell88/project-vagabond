@@ -1,8 +1,8 @@
-# PROJECT VAGABOND
+# WAYFARE
 
-* Ruby on Rails
+* Project Vagabond, a Ruby on Rails app.
 
-* [Heroku]()
+* [Heroku](https://wayfare.herokuapp.com)
 
 
 

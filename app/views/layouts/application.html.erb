@@ -11,9 +11,9 @@
   <body>
     <% unless controller_name == "home" %>
       <div class="navbar">
-        <div><a href="/">WAYFARE</a></div>
-        <div><% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
+        <div class="navbar-left"><a href="/cities">WAYFARE</a></div>
+        <div class="navbar-right"><% if user_signed_in? %>
+          Logged in as <strong><%= link_to current_user.username, users_show_path  %></strong> | 
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to "Sign up", new_user_registration_path %> |
