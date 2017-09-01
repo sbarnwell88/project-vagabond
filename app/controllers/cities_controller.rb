@@ -13,22 +13,22 @@ class CitiesController < ApplicationController
   end
 
   def show
-    @city = City.find(params[:id])
+    @city = City.friendly.find(params[:id])
   end
 
   def edit
-    @city = City.find(params[:id])
+    @city = City.friendly.find(params[:id])
   end
 
   def update
-    @city = City.find(params[:id])
+    @city = City.friendly.find(params[:id])
     @city.update(city_params)
 
     redirect_to cities_path(@city)
   end
 
   def destroy
-    @city = City.find(params[:id])
+    @city = City.friendly.find(params[:id])
     @city.destroy
 
     redirect_to cities_path

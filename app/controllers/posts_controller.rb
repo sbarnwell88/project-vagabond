@@ -7,12 +7,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @city = City.find params[:city_id]
+    @city = City.friendly.find params[:city_id]
     @post = Post.new
   end
   
   def create
-    @city = City.find params[:city_id]
+    @city = City.friendly.find params[:city_id]
     @post = @city.posts.new(post_params)
     if @post.valid?
       @post.save
@@ -29,12 +29,12 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @city = City.find params[:city_id]
+    @city = City.friendly.find params[:city_id]
     @post = Post.find params[:id]
   end
 
   def update
-    @city = City.find params[:city_id] 
+    @city = City.friendly.find params[:city_id] 
     @post = @city.posts.find params[:id]
     @post.update(post_params)
     
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @city = City.find params[:city_id]
+    @city = City.friendly.find params[:city_id]
     @post = @city.posts.find params[:id]
     @post.destroy
 
