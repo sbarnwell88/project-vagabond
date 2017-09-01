@@ -1,4 +1,4 @@
-WAYFARE...a Ruby on Rails app.
+<h1>WAYFARE</h1>...a Ruby on Rails app.
 <br>
 Where we come together to build a travel community by giving out ideas on our favorite places around the world!
 <br>
