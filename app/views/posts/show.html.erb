@@ -7,17 +7,22 @@
 
         <div>
             <div class="edit-button">
+                <% if can? :update, @post %>
                 <button class="btn"> <%= link_to  "edit tip", edit_city_post_path %> </button>
+                <% end %> 
                 &nbsp;
                 &nbsp;
                 &nbsp;
                 <button class="btn"> <%= link_to  "back to city", city_path(@post.city, @post) %> </button>
             </div>
             <div class="delete-button">
+            <% if can? :destroy, @post %>
             <%= form_for [@post.city, @post], method: :delete do |f| %> 
             <%= f.submit "Delete", class: "delete btn", data: {confirm: "Are you sure?"} %>
             <% end %>
+            <% end %> 
             </div>
         </div>
+        <p class="notice"><%= notice %></p>
     </div>
 </div>
