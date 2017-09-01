@@ -70,9 +70,16 @@
 }
 
 .city-header {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 150px;
+    text-transform: uppercase;
+    text-shadow: 6px 6px rgba(91, 92, 92, 0.50);
     margin: 50px;
     position: absolute;
-    transform: translate(150px);
+    word-wrap: break-word;
+    top: 50%; right: 50%;
+    transform: translate(55%,-50%);
 }
 
 ///////////////////////////////////////
