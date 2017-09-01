@@ -9,6 +9,7 @@
       <div class="new-tip">Have a great tip about this city? <%= link_to  "Add a new tip here.", new_city_post_path(@city.slug) %></div>
     </div>
     <div class="posts">
+    <%# post index page  %>
           <% @city.posts.order("created_at DESC").each do |post| %>
             <%= link_to post.title, city_post_path(@city.slug, post.id) %>
             <p><%=truncate(post.tip, length: 50)%> <%=link_to " >>", city_post_path(@city, post)%></p>
