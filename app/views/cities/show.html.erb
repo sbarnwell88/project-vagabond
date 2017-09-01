@@ -6,7 +6,7 @@
     <div class="city-details">
     <h3><%= @city.description %></h3>
     <div>
-      <div class="new-tip">Have a great tip about this city? <%= link_to  "Add New Tip", new_city_post_path(@city.id) %></div>
+      <div class="new-tip">Have a great tip about this city? <%= link_to  "Add A New Tip", new_city_post_path(@city.id) %></div>
     </div>
     <div class="posts">
           <% @city.posts.order("created_at DESC").each do |post| %>
