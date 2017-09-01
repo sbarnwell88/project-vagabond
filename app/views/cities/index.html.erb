@@ -1,11 +1,6 @@
 <div>
-    <div class="container-city-index">
-
-        
-        <% @cities.each do |city| %>
-            <h1><%= link_to city.name, city_path(city) %></h1>
+        <% @cities.order("created_at ASC").each do |city| %>
+            <h1 class="inlinkname"><%= link_to city.name, city_path(city) %></h1>
+            <div class="flex-container"><%= image_tag(city.image, alt: "Atlanta", class: "indeximg")%></div>
         <% end %>
-        
-    </div>
-    <div class="city-details"><%= link_to  "Add New City", new_city_path %></div>
 </div>

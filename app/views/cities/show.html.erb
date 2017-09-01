@@ -1,22 +1,20 @@
 <div>
   <div class="container-city-views">
     <%= image_tag @city.image, class:"img"%>
-    <h1 class="city-header">Welcome to <%= @city.name %></h1>
+    <h1 class="city-header"><%= @city.name %></h1>
   <div>
     <div class="city-details">
-    <%# city show page  %>
-    <h3><%= @city.description %></h3> 
+    <p class="city"><%= @city.description %></p>
     <div>
-        <ul>
-        <%# posts showing up in descending order  %>
+      <div class="new-tip">Have a great tip about this city? <%= link_to  "Add a new tip here.", new_city_post_path(@city.slug) %></div>
+    </div>
+    <div class="posts">
           <% @city.posts.order("created_at DESC").each do |post| %>
-          <%# posts index -- post title  %>
-            <li><%= link_to post.title, city_post_path(@city.id, post.id) %>
-            <%= post.created_at %></li>
+            <%= link_to post.title, city_post_path(@city.slug, post.id) %>
+            <p><%=truncate(post.tip, length: 50)%> <%=link_to " >>", city_post_path(@city, post)%></p>
+            <p><%= distance_of_time_in_words(post.created_at, Time.now)%> ago</p><br/>
           <% end %>
-      </ul> 
-  </div>
-    <%= link_to  "Add New Tip", new_city_post_path(@city.id) %>
+    </div>
   </div>
   </div>
 </div>
