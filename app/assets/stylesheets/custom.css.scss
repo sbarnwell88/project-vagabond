@@ -55,25 +55,18 @@
 }
 
 .city-header {
-    margin: 50px;
+    font-family: 'Asap Condensed', sans-serif;    
+    font-size: 120px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
     position: absolute;
-    transform: translate(150px);
+    transform: translate(450px, 250px);
 }
 
-///////////////////////////////////////
-//        IMAGES
-///////////////////////////////////////
- .img {
-     width: 100%;
- }
-///////////////////////////////////////
-//        IMAGES
-///////////////////////////////////////
- .img {
-     width: 100%;
- }
-
-
+.img {
+    margin: 5px;
+}
 ///////////////////////////////////////
 //        FORMS
 ///////////////////////////////////////

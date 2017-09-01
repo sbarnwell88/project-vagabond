@@ -1,10 +1,10 @@
 <div>
+  <h1 class="city-header"><%= @city.name %></h1>
   <div class="container-city-views">
     <%= image_tag @city.image, class:"img"%>
-    <h1 class="city-header">Welcome to <%= @city.name %></h1>
-  <div>
+  <div class="bottomstyle">
     <div class="city-details">
-    <h3><%= @city.description %></h3>
+    <h3 class="desstyle"><%= @city.description %></h3>
     <div>
       <div class="new-tip"><%= link_to  "Add New Tip", new_city_post_path(@city.id) %></div>
     </div>
