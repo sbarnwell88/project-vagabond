@@ -4,10 +4,13 @@
     <h1 class="city-header">Welcome to <%= @city.name %></h1>
   <div>
     <div class="city-details">
-    <h3><%= @city.description %></h3>
+    <%# city show page  %>
+    <h3><%= @city.description %></h3> 
     <div>
         <ul>
+        <%# posts showing up in descending order  %>
           <% @city.posts.order("created_at DESC").each do |post| %>
+          <%# posts index -- post title  %>
             <li><%= link_to post.title, city_post_path(@city.id, post.id) %>
             <%= post.created_at %></li>
           <% end %>
