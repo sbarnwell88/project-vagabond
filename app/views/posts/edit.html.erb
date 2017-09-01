@@ -3,7 +3,9 @@
         <h3>Edit Post</h3>
 
         <%= render "partials/form" %>
-
+        <% if flash.alert %>
+          <div><%=flash.alert%></div>
+        <%end%> 
         <p class="notice"><%= notice %></p>
     </div>
 </div>
