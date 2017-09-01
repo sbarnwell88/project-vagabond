@@ -49,6 +49,15 @@ class PostsController < ApplicationController
     redirect_to city_path(@city)
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    @city = City.friendly.find params[:city_id]
+    flash[:notice] = "Access denied! This isn't your post."
+    flash.keep(:notice)
+
+    redirect_to city_post_path(@city)
+
+  end
+
   private
   def post_params
       post = params.require(:post).permit(:title, :tip, :post_id, :user_id)
