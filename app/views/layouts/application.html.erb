@@ -12,14 +12,14 @@
     <% unless controller_name == "home" %>
       <div class="navbar">
         <div class="navbar-left"><a href="/cities">WAYFARE</a></div>
-        <div class="navbar-right">
+        <div class="navbar-right"><span>
         <% if user_signed_in? %>
-          Logged in as <strong><%= link_to current_user.username, users_show_path  %></strong> | 
+          Logged in as <%= link_to current_user.username, users_show_path  %> | 
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to "Sign up", new_user_registration_path %> |
           <%= link_to "Login", new_user_session_path  %>
-        <% end %></div>
+        <% end %></span></div>
       </div
     <% end %>
     <%= yield %>
