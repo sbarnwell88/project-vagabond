@@ -6,12 +6,13 @@
     <div class="city-details">
     <h3><%= @city.description %></h3>
     <div>
-      <div class="new-tip">Have a great tip about this city? <%= link_to  "Add A New Tip", new_city_post_path(@city.id) %></div>
+      <div class="new-tip">Have a great tip about this city? <%= link_to  "Add A New Tip", new_city_post_path(@city.slug) %></div>
     </div>
     <div class="posts">
           <% @city.posts.order("created_at DESC").each do |post| %>
-            <%= link_to post.title, city_post_path(@city.id, post.id) %>
-            <p><%= post.created_at %></p>
+            <%= link_to post.title, city_post_path(@city.slug, post.id) %>
+            <p><%=truncate(post.tip, length: 50)%> <%=link_to "Read More", city_post_path(@city, post)%></p>
+            <p><%= distance_of_time_in_words(post.created_at, Time.now)%> ago</p><br/>
           <% end %>
     </div>
   </div>
