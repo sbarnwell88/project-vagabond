@@ -3,13 +3,18 @@
 @import "bootswatch/flatly/bootswatch";
 
 ///////////////////////////////////////
-//           NAVBAR
+//         NAVBAR & FOOTER
 ///////////////////////////////////////
 
 // a:hover{
 //     text-transform: none;
 //     color: white;
 // }
+
+a {
+    padding: 0;
+    margin: 0;
+}
 
 .navbar {
     padding: 20px 40px;
@@ -22,8 +27,30 @@
     span {
         font-size: 15px;
     }
-
 }
+
+.bottom-nav {
+    margin-top: 15px;
+    padding: 8px 40px;
+    padding-right: 55px;
+    margin: 0;
+    height: 60px;
+    border-radius: 0;
+    background-color: #c0c0c0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    span {
+        font-size: 15px;
+    }
+}
+
+.flex-container {
+    margin-bottom: 25px;
+}
+
+///////////////////////////////////////
+//       SPLASH
+///////////////////////////////////////
 
 .jumbotron p {
     font-size: 120px;
@@ -45,6 +72,10 @@
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
+///////////////////////////////////////
+//       POST
+///////////////////////////////////////
 
 .container-post-views {
     display: flex;

@@ -20,9 +20,17 @@
           <%= link_to "Sign up", new_user_registration_path %> |
           <%= link_to "Login", new_user_session_path  %>
         <% end %></span></div>
-      </div
+      </div>
     <% end %>
     <%= yield %>
+    <% unless controller_name == "home" %>
+      <div class="bottom-nav">
+        <div class="navbar-left"><a href="/cities">WAYFARE</a></div>
+        <div class="navbar-right"><span>
+          made by team vagibond
+        </span></div>
+      </div>
+      <% end %>
     <!-- application javascript file -->
     <%= javascript_include_tag :application %>
   </body>
