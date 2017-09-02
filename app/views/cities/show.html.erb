@@ -1,7 +1,7 @@
 <div>
   <div class="container-city-views">
     <%= image_tag @city.image, class:"img"%>
-    <h1 class="city-header"><%= @city.name %></h1>
+    <p class="city-header"><%= @city.name %></p>
   <div>
     <div class="city-details">
     <p class="city"><%= @city.description %></p>
@@ -11,7 +11,7 @@
     <div class="posts">
           <% @city.posts.order("created_at DESC").each do |post| %>
             <%= link_to post.title, city_post_path(@city.slug, post.id) %>
-            <p><%=truncate(post.tip, length: 50)%> <%=link_to " >>", city_post_path(@city, post)%></p>
+            <p><%=truncate(post.tip, length: 100)%> <%=link_to " >>", city_post_path(@city.slug, post)%></p>
             <p><%= distance_of_time_in_words(post.created_at, Time.now)%> ago</p><br/>
           <% end %>
     </div>

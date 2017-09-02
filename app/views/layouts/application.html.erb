@@ -22,7 +22,9 @@
         <% end %></span></div>
       </div>
     <% end %>
+    <div class="body">
     <%= yield %>
+    </div>
     <% unless controller_name == "home" %>
       <div class="bottom-nav">
         <div class="navbar-left"><a href="/cities">WAYFARE</a></div>
