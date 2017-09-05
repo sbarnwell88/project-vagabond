@@ -14,6 +14,8 @@ class PostsController < ApplicationController
   def create
     @city = City.friendly.find params[:city_id]
     @post = @city.posts.new(post_params)
+
+    # validation error message
     if @post.valid?
       @post.save
       redirect_to city_post_path(@city, @post)
